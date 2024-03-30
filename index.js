@@ -90,3 +90,15 @@ client.login(process.env.TOKEN);
 process.on('uncaughtException', (err) => {
     console.error('There was an uncaught error:', err);
 });
+// Setup web server using Express
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+app.listen(port, () => {
+  console.log(`Web server running at http://localhost:${port}`);
+});
